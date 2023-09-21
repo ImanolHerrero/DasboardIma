@@ -17,7 +17,7 @@ const UserComponent = () => {
   const [page, setPage] = useState(1);
   const [onPage] = useState(5);
   const [totalItem, setTotalItem] = useState(0);
-  const [itemOnLastPage, setItemOnLastPage] = useState(0);
+  const [_, setItemOnLastPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
