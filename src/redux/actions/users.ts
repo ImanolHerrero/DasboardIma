@@ -112,13 +112,12 @@ export const fetchUserActiveTrue = (userId: string) => async (dispatch: Dispatch
       const axios: AxiosInstance = axiosIntances();
       axios.defaults.headers.common["coder_token"] = `${token}`;
 
-      const response = await axios.delete(`/user/${userId}`);
+      const response = await axios.get(`/user/active/${userId}`);
       console.info(response)
       const row = response.data
       if (response.status === 200 && +row === 1) {
         dispatch(getActiveUsersTrue(userId))
       }
-
     }
   } catch (error) {
     console.log(error)
@@ -136,7 +135,7 @@ export const fetchUserActiveFalse = (userId: string) => async (dispatch: Dispatc
       console.log(userId);
       
 
-      const response = await axios.get(`/user/active/${userId}`);
+      const response = await axios.delete(`/user/disable/${userId}`);
       console.log(response);
       
       const row = response.data
