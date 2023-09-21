@@ -10,7 +10,7 @@ export const getAllSongs = (onPage, page) => {
 
     return async (dispatch) => {
         try {
-            const response = await axios.get(`http://ec2-18-221-249-255.us-east-2.compute.amazonaws.com/song?onPage=${onPage}&page=${page}`);
+            const response = await axios.get(`https://dashboard-backend-production.up.railway.app/song?onPage=${onPage}&page=${page}`);
             dispatch({
                 type: GET_ALL_SONGS,
                 payload: response.data
@@ -24,7 +24,7 @@ export const getAllSongs = (onPage, page) => {
 export const disableSong = (songId) => {
     return async (dispatch) => {
         try {
-            await axios.delete(`http://ec2-18-221-249-255.us-east-2.compute.amazonaws.com/song/${songId}`);
+            await axios.delete(`https://dashboard-backend-production.up.railway.app/song/${songId}`);
 
             dispatch({
                 type: DISABLE_SONG,
@@ -41,7 +41,7 @@ export const updateSong = (songId, updatedDescription) => {
         dispatch({ type: UPDATE_SONG_DESCRIPTION_START });
 
         try {
-            const response = await axios.put(`http://ec2-18-221-249-255.us-east-2.compute.amazonaws.com/song/${songId}`, {
+            const response = await axios.put(`https://dashboard-backend-production.up.railway.app/${songId}`, {
                 description: updatedDescription,
             });
 

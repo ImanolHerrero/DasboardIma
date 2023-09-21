@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosIntances = () => {
   const Axios = axios.create({
-    baseURL: "http://ec2-18-221-249-255.us-east-2.compute.amazonaws.com",
+    baseURL: "https://dashboard-backend-production.up.railway.app",
   });
 
   Axios.interceptors.response.use(
