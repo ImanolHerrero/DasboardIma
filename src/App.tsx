@@ -1,6 +1,9 @@
+// @ts-nocheck
+
 import { Route, Routes } from "react-router-dom";
 import Login from "./views/Login/Login";
 import User from "./views/Users/User";
+import SongComponent from "./views/Songs/Songs";
 
 function App() {
   return (
@@ -10,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/user" element={<User />} />
+            <Route path="/songs" element={<SongComponent />}></Route>
           </Routes>
         </div>
       </div>

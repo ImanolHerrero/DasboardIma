@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import {
@@ -9,6 +10,7 @@ import {
 } from "../../redux/actions/users";
 import { User } from "../../interfaces/state-interface";
 import Switch from "react-switch";
+import { Link } from "react-router-dom";
 
 const UserComponent = () => {
   const dispatch = useAppDispatch();
@@ -35,7 +37,7 @@ const UserComponent = () => {
         setTotalItem(totalItem);
 
         // Calculamos totalPages después de obtener la respuesta
-        const totalPages:  number = Math.ceil(totalItem / onPage);
+        const totalPages: number = Math.ceil(totalItem / onPage);
         setTotalPages(totalPages);
 
         console.log("Response: ", response);
@@ -185,6 +187,15 @@ const UserComponent = () => {
         ) : (
           <div>Loading...</div>
         )}
+        <div className="flex items-center justify-center">
+          <div className="my-12">
+            <Link to="/songs">
+              <button className="bg-black text-white p-4 rounded-lg">
+                View songs
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
